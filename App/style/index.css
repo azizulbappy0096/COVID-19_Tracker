@@ -1,0 +1,30 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.col {
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.nav {
+    height: 50px;
+    background-color: rgb(30, 130, 224);
+}
+
+.tracker-map {
+    height: 400px;
+    /* background-color: yellowgreen; */
+}
+
+#map {
+    height: 100%;
+    width: 100%;
+}
+
+.covid-info {
+    height: 700px;
+    background-color: red;
+}
