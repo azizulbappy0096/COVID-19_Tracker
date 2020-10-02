@@ -8,36 +8,101 @@
     <title> COVID-19 Tracker</title>
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <!-- Fontawesome icon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
     <!-- Local CSS -->
     <link rel="stylesheet" href="./style/index.css">
     <!-- Polyfill -->
     <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.0/moment.min.js" integrity="sha512-Izh34nqeeR7/nwthfeE0SI3c8uhFSnqxV0sI9TvTcXiFJkMd6fB644O64BRq2P/LA/+7eRvCw4GmLsXksyTHBg==" crossorigin="anonymous"></script> -->
 </head>
 <body>
-    <div class="container-fluid">
+<!--     <div class="container-fluid">
         <div class="row">
             <div class="col nav"></div>
         </div>
-    </div>
+    </div> -->
 
     <div class="container-fluid">
         <div class="row">
             <div class="col tracker-map">
                 <div id="map"></div>
+                <!-- <div class="worldwide-info">
+                    <div class="total-cases">
+                        <h4> Cases: </h4>
+                        <p> 1002948 </p>
+                    </div>
+
+                    <div class="total-recovered">
+                        <h4> Recovered: </h4>
+                        <p> 1002948 </p>
+                    </div>
+
+                    <div class="total-death">
+                        <h4> Death: </h4>
+                        <p> 1002948 </p>
+                    </div>
+                </div> -->
             </div>
         </div>
     </div>
 
+    <div class="search-bar">
+        <i class="fas fa-search" onclick="clickEvent()"></i>
+        <input id="user-input" type="text" class="form-control" onkeyup="enterKeyEvent(event)">
+    </div>
+
     <div class="container-fluid">
         <div class="row">
-            <div class="col covid-info"></div>
+            <div class="col covid-info">
+                <div class="short-hand-info">
+
+                </div>
+
+                <div class="info-table">
+                    <h4> Cases </h4>
+                    <div class="table-overflow">
+                        <table class="table">
+                            <thead>
+                            <tr>
+                                <th scope="col"> Location </th>
+                                <th scope="col"> Confirmed </th>
+                                <th scope="col"> Recovered </th>
+                                <th scope="col"> Deaths </th>
+                            </tr>
+                            </thead>
+                            <tbody id="covid-report-table">
+                                
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="info-source">
+                        <p> *The number of new cases reported for the most recent day of complete data, within the last 3 days </p>
+                        <p> Sources: <a href="https://corona.lmao.ninja/docs/"> Novel_Covid-19 </a> </p>
+                    </div>
+                </div>
+
+                <div class="data-chart">
+                    <div class="data-chart-header">
+                        <h5>Cases over time</h5>
+                        <p> Worldwide </p>
+                    </div>
+                    <div id="myChart"></div>
+                </div>
+        
+            </div>
         </div>
     </div>
 
+
+
     <script src="./js/script.js"></script>
+    <script src="./js/buildService.js" async defer></script>
     <script
       src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB11J9hk9bQnBq8NAjfETU2A6H0QGN1Ouc&callback=initMap&libraries=&v=weekly"
       async defer
     ></script>
+    <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
 </body>
 </html>
