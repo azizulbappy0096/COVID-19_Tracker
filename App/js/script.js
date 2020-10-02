@@ -1,6 +1,7 @@
 let map;
 var infoWindow;
 
+// Map function
 function initMap() {
   map = new google.maps.Map(document.getElementById("map"), {
     center: {
@@ -157,6 +158,8 @@ function initMap() {
 
 };
 
+
+// API"s
 getAllData = () => {
   const URL = "https://disease.sh/v3/covid-19/countries";
   fetch(URL).then(response => {
@@ -213,6 +216,7 @@ getWorldData = () => {
   })
 }
 
+// Map marker and infowindow
 function createMarker(latlng, radius, html) {
 
   const marker = new google.maps.Circle({
@@ -266,11 +270,13 @@ setMarker = (data) => {
   map.fitBounds(bounds);
 }
 
+// Number beautifier
 formatNumber = (number) => {
   let formattedNum = new Intl.NumberFormat('en-IN', { maximumSignificantDigits: 3 }).format(number);
   return formattedNum;
 };
 
+// Event handler
 enterKeyEvent = (e) => {
   let user_input = document.getElementById("user-input").value;
 
@@ -294,32 +300,16 @@ clickEvent = () => {
 }
 
 
-
 window.onload = () => {
   var chart = new CanvasJS.Chart("myChart", {
     animationEnabled: true,
     height:200,
-	/* title:{
-		text: "Stock Price of BMW - August"
-	}, */
 	axisX:{
-		//valueFormatString: "DD MMM",
 		crosshair: {
 			enabled: true,
             snapToDataPoint: true,
             label: false
 		}
-	},
-	axisY: {
-		//title: "Closing Price (in USD)",
-		//valueFormatString: "$##0.00",
-		// crosshair: {
-		// 	enabled: true,
-		// 	snapToDataPoint: true,
-		// 	labelFormatter: function(e) {
-		// 		return "$" + CanvasJS.formatNumber(e.value, "##0.00");
-		// 	}
-		// }
 	},
 	data: [{
 		type: "area",

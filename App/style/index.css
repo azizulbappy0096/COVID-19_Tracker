@@ -14,9 +14,9 @@
     background-color: rgb(30, 130, 224);
 }
 
+/* Google map */
 .tracker-map {
     height: 400px;
-    /* background-color: yellowgreen; */
 }
 
 #map {
@@ -46,22 +46,7 @@
     font-weight: 600;
 }
 
-/* .worldwide-info {
-    width: 200px;
-    height: 300px;
-    background-color: #ffffff91;
-    position: absolute;
-    top: 15%;
-    left: 5%;
-    padding: 10px;
-    border-radius: 20px;
-}
-
-.worldwide-info p {
-    padding-left: 20px;
-    font-weight: 600;
-} */
-
+/* SearchBar */
 .search-bar {
     margin: 0 auto;
     width: 50%;
@@ -93,6 +78,8 @@
     cursor: pointer;
 }
 
+
+/* All info data */
 .covid-info {
     height: 700px;
 }
@@ -109,6 +96,7 @@
     margin-bottom: 20px;
 }
 
+/* country base or worldwide info */
 .short-hand-info h5 {
     margin-bottom: 20px;
 }
@@ -155,6 +143,7 @@
     }
 }
 
+/* info table */
 .info-table h4 {
     font-size: 20px;
     font-weight: 400;
@@ -201,6 +190,7 @@ tbody {
     margin-bottom: 0;
 }
 
+/* info chart */
 .data-chart-header {
     margin-bottom: 30px;
 }
